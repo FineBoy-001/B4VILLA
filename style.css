@@ -1,242 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
-:root{
-    --primary-color: #111111b9;
-    --text-dark: #333333;
-    --text-light: #767268;
-    --extra-light: #f0efef;
-    --white: #ffffff;
-    --max-width: 1200px;
-}
-
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.section_container{
-    max-width: var(--max-width);
-    margin: auto;
-    padding: 5rem 1rem;
-}
-
-.section_header{
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    text-align: center;
-}
-
-.section_description{
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--text-light);
-    text-align: center;
-    line-height: 1.75rem;
-}
-
-.btn{
-    padding: 0.75rem 1.5rem;
-    outline: none;
-    border: none;
-    font-size: 1rem;
-    font-family: "Lato", sans-serif;
-    color: var(--white);
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    transition: .3s;
-    cursor: pointer;
-}
-
-.btn:hover{
-    background-color: var(--white);
-    color: var(--text-dark);
-}
-
-img{
-    display: flex;
-    width: 100%;
-}
-
-a{
-    text-decoration: none;
-    transition: .3s;
-}
-
-ul{
-    list-style: none;
-}
-
-html,
-body{
-    scroll-behavior: smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    font-family: "Lato", sans-serif;
-}
-
-header{
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.25),
-        rgba(255, 255, 255, 0)
-    ),
-    url("assets/B4\ Royal\ Villa.jpeg");
-    background-position:  center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    min-height: 90vh;
+color:#333;
 }
 
 nav{
-    position: fixed;
-    isolation: isolate;
-    width: 100%;
-    z-index: 9;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
 }
 
-.nav_header{
-    padding: 1rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--primary-color);
+.logo{
+font-size:25px;
+font-weight:bold;
 }
 
-.nav_logo a{
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--white);
+ul{
+display:flex;
+gap:25px;
+list-style:none;
 }
 
-.nav_menu_btn{
-    font-size: 1.5rem;
-    color: var(--white);
-    cursor: pointer;
+a{
+text-decoration:none;
+color:#333;
 }
 
-.nav_links{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: var(--primary-color);
-    transition: transform 0.5s;
-    z-index: -1;
+button,.btn{
+background:#b8860b;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:5px;
 }
 
-.nav_links.open{
-    transform: translateY(100%);
+.hero{
+height:80vh;
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url("./assets/bg1.jpeg");
+background-size:cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
 }
 
-.nav_links a{
-    font-weight: 600;
-    color: var(--white);
-    white-space: nowrap;
+.hero h1{
+font-size:55px;
 }
 
-.header_container{
-    display: grid;
-    gap: 2rem;
+.hero p{
+margin:20px;
+font-size:20px;
 }
 
-.header_container h1{
-    font-size: 4.5rem;
-    font-weight: 500;
-    color: var(--white);
-    text-align: center;
+.about,.cards{
+padding:60px 10%;
+text-align:center;
 }
 
-.header_content .section_description{
-    margin-bottom: 2rem;
-    color: var(--white);
-    text-align: center;
+.cards{
+display:flex;
+gap:25px;
 }
 
-.header_btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+.cards div{
+flex:1;
+padding:30px;
+box-shadow:0 0 10px #ccc;
 }
 
-.header_btn .btn{
-    padding: calc(0.75rem - 4px) calc(1.5rem - 4px);
-    border: 2px solid var(--white);
-}
-
-@media (width > 786px) {
-    nav{
-        position: static;
-        padding-inline: 1rem;
-        padding-top: 2rem;
-        max-width: var(--max-width);
-        margin-inline: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-
-    .nav_header{
-        flex: 1;
-        padding: 0;
-        background-color: transparent;
-    }
-
-    .nav_logo a{
-        font-size: 1.85rem;
-    }
-
-    .nav_menu_btn{
-        display: none;
-    }
-
-    .nav_links{
-        position: static;
-        width: fit-content;
-        padding: 0;
-        flex-direction: row;
-        background-color: transparent;
-        transform: none !important;
-    }
-
-    .nav_links a:hover{
-        color: var(--primary-color);
-    }
-
-    .header_container{
-        grid-template-columns: 4fr 2fr;
-    }
-
-    .header_container h1{
-        text-align: left;
-        font-size: 6rem;
-        line-height: 6.5rem;
-    }
-
-    .header_content{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .header_content .section_description{
-        text-align: left;
-    }
-
-    .header_btn{
-        justify-content: flex-start;
-    }
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
 }
